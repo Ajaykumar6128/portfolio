@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  font-size: 18px;
+  padding-top: 80px;
+  animation: fadeSlide 1s ease-in-out;
+}
+
+/* ===== Header with Title ===== */
+.header {
+  background-color: #6495ED;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-title {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.header nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.header nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.header nav a:hover::after {
+  width: 100%;
+}
+
+.header nav a:hover {
+  color: white;
+}
+
+.resume-btn {
+  border: 2px solid white;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* ===== Main Section ===== */
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.main-left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 520px;
+}
+
+.main-right {
+  display: block;
+  justify-content: center;
+  width: 30%;
+  background-color: #e6f5ff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main-right:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Left Block ===== */
+.block1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: zoomIn 1s ease;
+}
+
+.block1-left h2 {
+  font-size: 32px;
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+.block1-left h3 {
+  font-size: 22px;
+  color: #005b99;
+  margin-bottom: 10px;
+}
+
+.block1-left button {
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.block1-left button:hover {
+  background-color: #005b99;
+}
+
+.block1-left button a {
+  color: white;
+  text-decoration: none;
+}
+
+.block1-right .image-round {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #007acc;
+  transition: transform 0.2s ease;
+}
+
+.block1-right .image-round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.block1-right .image-round:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 122, 204, 0.5);
+}
+
+/* ===== Right Block ===== */
+.main-right h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007acc;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.main-right-block1 {
+  padding: 10px 0;
+}
+
+.main-right-block1-imageround {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #007acc;
+  margin: 0 auto 15px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.main-right-block1-imageround img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.main-right-block1 h3 {
+  color: #007acc;
+  margin: 10px 0;
+}
+
+.main-right-block1 p::first-letter {
+  font-size: 130%;
+  font-weight: bold;
+  color: #005b99;
+}
+
+.main-right-block1 p:hover {
+  background-color: #d6ecff;
+  border-radius: 10px;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+/* ===== Responsive Design ===== */
+@media screen and (max-width: 992px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main-left,
+  .main-right {
+    width: 100%;
+  }
+
+  .block1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header nav {
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .block1-right .image-round {
+    margin: 20px auto;
+  }
+
+  .main-right-block1-imageround {
+    margin: 0 auto 15px;
+  }
+
+  .main-right h2,
+  .main-right-block1 h3,
+  .main-right-block1 p {
+    text-align: center;
+  }
+}
+
+/* ===== Download Button ===== */
+.download-btn {
+  display: inline-block;
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #005b99;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #6495ED; /* Sky Blue */
+  color: white;
+  padding: 25px 20px;
+  margin-top: 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-left h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.footer-left p {
+  font-size: 14px;
+  color: #e6e6e6;
+}
+
+.footer-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: #dceeff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right a {
+    margin: 10px 10px 0;
+  }
+}
